@@ -61,15 +61,18 @@ public class PageController {
         List<String> keyList = Arrays.asList(key.split(""));
 
         for (int i = 0; i < workingList.length; i++) {
+            String temp = "";
             for (int j = 0; j < workingList[i].length(); j++) {
-                String temp = "";
                 String character = workingList[i].substring(j, j + 1);
-
-
+                int index = alphabet.indexOf(character);
+                temp += keyList.get(index);
             }
+            workingList[i] = temp;
         }
 
-        return String.valueOf(alphabet.indexOf("d"));
+        String finale  = String.join(" ", workingList);
+
+        return finale;
     }
 
 
